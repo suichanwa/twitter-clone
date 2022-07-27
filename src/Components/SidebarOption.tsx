@@ -1,14 +1,12 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import "./SidebarOption.css";
-import { SlideBarProps } from "../types/Types";
 
-
-const SidebarOption = (props: SlideBarProps) => {
+const SidebarOption = (text: any, Icon: any, active: any, props:any) => {
     return (
-        <div className="sidebarOption" onClick={props.clicked}>
-        {props.icon}
-        <div className="sidebarOption__text">{props.title}</div>
-        </div>
+    <div className={`sidebarOption  ${active && "sidebarOption--active"}`}>
+        <Icon />
+        <h2>{text}</h2>
+    </div>
     );
 }
 

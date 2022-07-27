@@ -1,4 +1,4 @@
-# Click on the @icn-camera icon to take a screen shot.
+# Twitter-clone on react 
 
 
 
@@ -7,3 +7,4 @@
 
 
 [:heavy_check_mark:] Create project lold
+[:x:] Do something usefull
