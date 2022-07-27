@@ -1,12 +1,18 @@
-import React, { MouseEventHandler } from "react";
+import React from "react";
 import "./SidebarOption.css";
 
-const SidebarOption = (text: any, Icon: any, active: any, props:any) => {
+interface SidebarOptionProps {
+    active: boolean;
+    text: string;
+    Icon?: React.ElementType;
+}
+
+const SidebarOption: React.FC<SidebarOptionProps> = ({ active, text, Icon }) => {
     return (
-    <div className={`sidebarOption  ${active && "sidebarOption--active"}`}>
-        <Icon />
-        <h2>{text}</h2>
-    </div>
+        <div className={`sidebarOption ${active ? "sidebarOption--active" : ""}`}>
+            {Icon && <Icon className="sidebarOption__icon" />}
+            <div className="sidebarOption__text">{text}</div>
+        </div>
     );
 }
 
