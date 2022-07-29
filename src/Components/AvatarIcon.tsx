@@ -1,0 +1,1 @@
+export const AvatarIcon = "https://www.linkpicture.com/q/telegaAva2.jpg";

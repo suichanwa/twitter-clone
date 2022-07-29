@@ -1,5 +1,4 @@
 import React from "react";
-import "./Sidebar.css";
 import SidebarOption from "./SidebarOption";
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";
@@ -10,8 +9,7 @@ import ListAltIcon from "@material-ui/icons/ListAlt";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { Button } from "@material-ui/core";
-import './SidebarOption.css';
-import './Sidebar.css'
+import '../Styles/Sidebar.css';
 
 const Sidebar = () => {
   return (
@@ -24,6 +22,11 @@ const Sidebar = () => {
       <SidebarOption text="Lists" Icon={ListAltIcon} active={false}/>
       <SidebarOption text="Profile" Icon={PermIdentityIcon} active={false}/>
       <SidebarOption text="More" Icon={MoreHorizIcon} active={false}/>
+
+      <Button variant="contained" color="primary" className="sidebar__tweet">
+        Tweet
+      </Button>
+
     </div>
   );
 }

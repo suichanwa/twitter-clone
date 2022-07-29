@@ -1,6 +1,16 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
+import 'firebase/compat/database'
+import { getDatabase, ref } from 'firebase/database'
+
+
+interface Firebase {
+  initializeApp: typeof initializeApp;
+  analytics: typeof getAnalytics;
+  auth: typeof getAuth;
+}
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyARhUqAF5HV54Uj1hmHCx_WG-HYAm3d_bc",
@@ -12,7 +22,11 @@ const firebaseConfig = {
   measurementId: "G-KXTQEEZRBQ"
 };
 
-const db = initializeApp(firebaseConfig);
-const analytics = getAnalytics(db);
+const app = initializeApp(firebaseConfig);
 
+const db = getDatabase(app);
+const analytics = getAnalytics(app);
+
+//const ref = db.ref("posts");
 export default db;
+
