@@ -2,10 +2,13 @@ import React, {useState, useEffect} from "react";
 import "../Styles/Feed.css";
 import { Avatar, Button } from "@material-ui/core";
 import TweetBox from './TweetBox'; 
+import { db } from "../db/Firebase";
+import 'firebase/firestore';
+import * as firebase from 'firebase/app'
+import {collection} from "firebase/firestore";
 
 function Feed(){
-    const [post, setPost] = useState([]);
-
+    const [posts, setPost] = useState([]);
     return(
         <div>
             <div className="feed">
