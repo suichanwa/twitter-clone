@@ -1,8 +1,4 @@
-import React, { useState } from "react";
 import { Avatar, Button } from "@material-ui/core";
-import db from "../db/Firebase";
-import firebase from 'firebase/compat/app'
-import 'firebase/compat/database'
 import "../Styles/TweetBox.css";
 import { AvatarIcon } from "./AvatarIcon";
 
