@@ -10,10 +10,13 @@ import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { Button } from "@material-ui/core";
 import '../Styles/Sidebar.css';
+import TwitterIcon from "@material-ui/icons/Twitter";
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
+      <TwitterIcon className="sidebar__twitterIcon" />
+
       <SidebarOption text="Home" Icon={HomeIcon} active={false} />
       <SidebarOption text="Search" Icon={SearchIcon} active={false}/>
       <SidebarOption text="Notifications" Icon={NotificationsNoneIcon} active={false}/>
@@ -23,7 +26,7 @@ const Sidebar = () => {
       <SidebarOption text="Profile" Icon={PermIdentityIcon} active={false}/>
       <SidebarOption text="More" Icon={MoreHorizIcon} active={false}/>
 
-      <Button variant="contained" color="primary" className="sidebar__tweet">
+      <Button variant="outlined" className="sidebar__tweet" fullWidth>
         Tweet
       </Button>
 

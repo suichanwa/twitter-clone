@@ -6,3 +6,12 @@ export interface SlideBarProps{
     title?: string;
     active?: boolean;
 }
+
+export interface IPost {
+    displayName: string;
+    username: string;
+    verified: boolean;
+    text: string;
+    image: string;
+    avatar: string;
+}

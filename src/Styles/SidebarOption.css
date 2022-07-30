@@ -24,8 +24,3 @@
 .sidebarOption--active {
   color: var(--twitter-color);
 }
-
-.sidebarOption__text{
-  font-size: 20px;
-  font-weight: 800;
-}
