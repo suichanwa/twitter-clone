@@ -10,8 +10,8 @@ import {collection} from "firebase/firestore";
 function Feed(){
     const [posts, setPost] = useState([]);
     return(
-        <div>
-            <div className="feed">
+        <div className="feed">
+            <div className="feed__header">
                 <h2>Home</h2>
             </div>
             <TweetBox />

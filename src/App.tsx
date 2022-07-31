@@ -9,11 +9,10 @@ import FirebaseTesting from './db/FirebaseTesting';
 
 function App() {
   return (
-    <div>
-      <FirebaseTesting />
-      <Feed />
-      <Post displayName={'suichanwa'} username={'name'} verified={false} text={'this is first post'} image={AvatarIcon} avatar={AvatarIcon} />
+    <div className="app">
       <Sidebar />
+      <Post displayName={'suichanwa'} username={'name'} verified={false} text={'this is first post'} image={AvatarIcon} avatar={AvatarIcon} />
+      <Feed />
     </div>
   );
 }
