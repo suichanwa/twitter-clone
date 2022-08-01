@@ -44,3 +44,11 @@
 .post__avatar {
   padding: 20px;
 }
+
+.like-button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  color:red;
+}

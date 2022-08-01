@@ -15,3 +15,12 @@ export interface IPost {
     image: string;
     avatar: string;
 }
+
+export interface sendTweetProps{
+    displayName: string;
+    username: string;
+    verified: boolean;
+    text: string;
+    image: string;
+    avatar: string;
+}

@@ -3,25 +3,37 @@ import "../Styles/TweetBox.css";
 import { AvatarIcon } from "./AvatarIcon";
 import { db } from "../db/Firebase";
 import React from "react";
-import {collection, getDocs} from "firebase/firestore";
+import {collection, doc } from "firebase/firestore";
+import { sendTweetProps } from "../types/Types";
+import Post from "./Post";
 
 function TweetBox(){
   const [tweetMessage, setTweetMessage] = React.useState("");
   const [tweetImage, setTweetImage] = React.useState("");
   const userCollectionRef = collection(db, "posts");
 
-  const sendTweet = (e: any) => {
+  //write function sendTweet to send tweet to firebase
+
+  const sendTweet = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const newTweet: sendTweetProps = {
+      displayName: "suichanwa",
+      username: "name",
+      verified: false,
+      text: tweetMessage,
+      image: tweetImage,
+      avatar: AvatarIcon,
+    };
+    
+    /*
+    userCollectionRef.add(newTweet);
+    setTweetMessage("");
+    setTweetImage("");
+    */
 
-   const getPosts = async() => {
-      const data = await getDocs(userCollectionRef); 
-      console.log(data);
-    }
-    getPosts();
   }
-  //implement sendTweet
+   
   return(
-
     <div className="tweetBox">
       <form>
         <div className="tweetBox__input">
