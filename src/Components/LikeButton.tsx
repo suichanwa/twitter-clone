@@ -5,14 +5,14 @@ import { Button } from '@material-ui/core';
 
 const LikeButton = () => {
     const [liked, setLiked] = useState(false);
-   
-    const handelClick = () => {
+
+    const handleClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
         setLiked(!liked);
-    }
+    };
 
     return(
-        <Button onClick={() => setLiked(!liked)} className="like-button-wrapper">
-            <FavoriteBorderIcon onClick={handelClick} className={liked ? "like-button-wrapper" : "liked"} fontSize="small" />
+        <Button onClick={handleClick} className="like-button-wrapper">
+            <FavoriteBorderIcon className={liked ? "like-button-wrapper" : "liked"} fontSize="small" />
         </Button>
     );
 }

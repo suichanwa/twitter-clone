@@ -1,4 +1,4 @@
-import React, {forwardRef} from "react";
+import {forwardRef} from "react";
 import "../Styles/Post.css";
 import { Avatar, Button } from "@material-ui/core";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
@@ -8,6 +8,7 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import PublishIcon from "@material-ui/icons/Publish";
 import { IPost } from "../types/Types";
 import LikeButton from "./LikeButton";
+import RTButton from "./Buttons/RTButton";
 
 const Post = forwardRef((props: IPost, ref: any) => {
     const {displayName, username, verified, text, image, avatar} = props;

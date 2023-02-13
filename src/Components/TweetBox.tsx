@@ -5,7 +5,6 @@ import { db } from "../db/Firebase";
 import React from "react";
 import {collection, doc } from "firebase/firestore";
 import { sendTweetProps } from "../types/Types";
-import Post from "./Post";
 
 function TweetBox(){
   const [tweetMessage, setTweetMessage] = React.useState("");
