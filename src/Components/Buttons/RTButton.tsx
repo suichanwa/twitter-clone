@@ -1,17 +1,28 @@
-import React from 'react';
-import { Button } from '@material-ui/core';
-import RepeatIcon from '@material-ui/icons/Repeat';
+import {useState} from "react";
+import "../../Styles/Post.css";
+import RepeatIcon from "@material-ui/icons/Repeat";
+import { RTButtonProps } from "../../types/Types";
+import { Button } from "@material-ui/core";
+import { RTStyle, rteeted } from "../../Styles/Style";
 
-interface RTButtonProps {
-  onRetweet: () => void;
+const RTButton = (props: RTButtonProps) => {
+    const [retweeted, setRetweeted] = useState(false);
+
+    const {post, onRetweet} = props;
+
+    const onClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
+        setRetweeted(!retweeted);
+        onRetweet();
+    }
+
+
+    return (
+        <Button onClick={onClick} className="RTStyle">
+            <RepeatIcon fontSize="small" className={retweeted ? "rtButton" : "rteeted"} />
+            {retweeted ? "" : ""}
+        </Button>
+    );
 }
 
-const RTButton: React.FC<RTButtonProps> = ({ onRetweet }) => {
-  return (
-    <Button onClick={onRetweet}>
-      <RepeatIcon fontSize="small" /> Retweet
-    </Button>
-  );
-};
-
 export default RTButton;
+

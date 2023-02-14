@@ -24,3 +24,8 @@ export interface sendTweetProps{
     image: string;
     avatar: string;
 }
+
+export interface RTButtonProps {
+  onRetweet: () => void;
+  post: IPost;
+}

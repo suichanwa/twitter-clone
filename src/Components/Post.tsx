@@ -1,20 +1,16 @@
-import {forwardRef} from "react";
+import React, {forwardRef, useState} from "react";
 import "../Styles/Post.css";
 import { Avatar, Button } from "@material-ui/core";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
-import RepeatIcon from "@material-ui/icons/Repeat";
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import PublishIcon from "@material-ui/icons/Publish";
 import { IPost } from "../types/Types";
 import LikeButton from "./LikeButton";
 import RTButton from "./Buttons/RTButton";
+import CommentButton from "./Buttons/CommentButton";
 
 const Post = forwardRef((props: IPost, ref: any) => {
     const {displayName, username, verified, text, image, avatar} = props;
-
-    //create a function that onClick will toggle the like button
-
 
     return (
         <div className="post" ref={ref}>
@@ -42,8 +38,12 @@ const Post = forwardRef((props: IPost, ref: any) => {
                 </div>
                 <img src={image} alt="tweet" className="post__image" />
                 <div className="post__footer">
-                    <ChatBubbleOutlineIcon fontSize="small" />
-                    <RepeatIcon fontSize="small" />
+                    <CommentButton onComment={function (): void {
+                        console.log("comment");
+                    }}/>
+                    <RTButton post={props} onRetweet={() => {
+                        console.log("retweet");
+                    }} />
                     <LikeButton />
                     <PublishIcon fontSize="small" />
                 </div>
@@ -53,3 +53,4 @@ const Post = forwardRef((props: IPost, ref: any) => {
 });
 
 export default Post;
+
