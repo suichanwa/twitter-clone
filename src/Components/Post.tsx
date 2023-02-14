@@ -11,6 +11,11 @@ import CommentButton from "./Buttons/CommentButton";
 
 const Post = forwardRef((props: IPost, ref: any) => {
     const {displayName, username, verified, text, image, avatar} = props;
+    const [posts, setPosts] = useState<IPost[]>([]);
+
+    const addPost = (post: IPost) => {
+        setPosts([...posts, post]);
+    }
 
     return (
         <div className="post" ref={ref}>
@@ -38,9 +43,12 @@ const Post = forwardRef((props: IPost, ref: any) => {
                 </div>
                 <img src={image} alt="tweet" className="post__image" />
                 <div className="post__footer">
-                    <CommentButton onComment={function (): void {
-                        console.log("comment");
-                    }}/>
+                  <CommentButton
+                        onComment={() => {
+                            const newPost = { ...props, text: "This is a new post" };
+                            addPost(newPost);
+                        }}
+                    />
                     <RTButton post={props} onRetweet={() => {
                         console.log("retweet");
                     }} />
@@ -53,4 +61,3 @@ const Post = forwardRef((props: IPost, ref: any) => {
 });
 
 export default Post;
-
