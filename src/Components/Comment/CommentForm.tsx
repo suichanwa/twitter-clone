@@ -1,32 +1,37 @@
-import React, { useState } from "react";
-import "../../Styles/Post.css";
+import { useState } from "react";
+import "../../Styles/Style.tsx"
 import { FormControl, Input, InputLabel, Button } from "@material-ui/core";
+import { CommentFormProps } from "../../types/Types";
 
-const CommentForm = () => {
-    const [comment, setComment] = useState("");
+const CommentForm = ({ open, close }: CommentFormProps) => {
+  const [comment, setComment] = useState("");
 
-    const handleSubmit = (event: any) => {
-        event.preventDefault();
-        console.log("Comment submitted: ", comment);
-        setComment("");
-    };
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    console.log("Comment submitted: ", comment);
+    setComment("");
+  };
 
-    return (
-        <form onSubmit={handleSubmit}>
-            <FormControl fullWidth>
-                <InputLabel htmlFor="comment">Add a comment</InputLabel>
-                <Input
-                    id="comment"
-                    type="text"
-                    value={comment}
-                    onChange={(e) => setComment(e.target.value)}
-                />
-            </FormControl>
-            <Button type="submit" fullWidth variant="contained" color="primary">
-                Submit
-            </Button>
-        </form>
-    );
+  if (!open) {
+    return null;
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <FormControl fullWidth>
+        <InputLabel htmlFor="comment">Add a comment</InputLabel>
+        <Input
+          id="comment"
+          type="text"
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+        />
+      </FormControl>
+      <Button type="submit" fullWidth variant="contained" color="primary" onClick={close}>
+        Submit
+      </Button>
+    </form>
+  );
 };
 
 export default CommentForm;

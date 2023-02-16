@@ -1,17 +1,21 @@
-import React, {forwardRef, useState} from "react";
+import {forwardRef, useState} from "react";
 import "../Styles/Post.css";
-import { Avatar, Button } from "@material-ui/core";
+import { Avatar } from "@material-ui/core";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
-import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
 import PublishIcon from "@material-ui/icons/Publish";
 import { IPost } from "../types/Types";
 import LikeButton from "./LikeButton";
 import RTButton from "./Buttons/RTButton";
 import CommentButton from "./Buttons/CommentButton";
+import CommentForm from "./Comment/CommentForm";
 
 const Post = forwardRef((props: IPost, ref: any) => {
     const {displayName, username, verified, text, image, avatar} = props;
     const [posts, setPosts] = useState<IPost[]>([]);
+    const [open, setIsOpen] = useState(false);
+    const openForm = () => setIsOpen(true);
+    const closeForm = () => setIsOpen(false); 
+
 
     const addPost = (post: IPost) => {
         setPosts([...posts, post]);
@@ -47,6 +51,8 @@ const Post = forwardRef((props: IPost, ref: any) => {
                         onComment={() => {
                             const newPost = { ...props, text: "This is a new post" };
                             addPost(newPost);
+                            setIsOpen(true);
+                            openForm();
                         }}
                     />
                     <RTButton post={props} onRetweet={() => {
@@ -55,6 +61,7 @@ const Post = forwardRef((props: IPost, ref: any) => {
                     <LikeButton />
                     <PublishIcon fontSize="small" />
                 </div>
+                <CommentForm open={open} close={closeForm} />
             </div>
         </div>
     );

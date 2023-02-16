@@ -1,54 +1,15 @@
-.post {
+/* Post.css */
+
+.comment-form {
+  margin-top: 24px;
   display: flex;
-  align-items: flex-start;
-  border-bottom: 1px solid var(--twitter-background);
-  padding-bottom: 10px;
+  flex-direction: column;
 }
 
-.post__body {
-  flex: 1;
-  padding: 10px;
+.comment-form input {
+  margin-bottom: 12px;
 }
 
-.post__body > img {
-  border-radius: 20px;
-}
-
-.post__footer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.post__headerDescription {
-  margin-bottom: 10px;
-  font-size: 15px;
-}
-
-.post__headerText > h3 {
-  font-size: 15px;
-  margin-bottom: 5px;
-}
-
-.post__badge {
-  font-size: 14px !important;
-  color: var(--twitter-color);
-}
-
-.post__headerSpecial {
-  font-weight: 600;
-  font-size: 12px;
-  color: gray;
-}
-
-.post__avatar {
-  padding: 20px;
-}
-
-.like-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-  color:red;
+.comment-form button {
+  margin-top: 12px;
 }

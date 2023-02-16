@@ -29,3 +29,8 @@ export interface RTButtonProps {
   onRetweet: () => void;
   post: IPost;
 }
+
+export interface CommentFormProps {
+  open: boolean;
+  close: () => void;
+}
