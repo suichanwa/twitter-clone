@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../Styles/Style.tsx"
+import "../../Styles/CommentButton.css";
 import { FormControl, Input, InputLabel, Button } from "@material-ui/core";
 import { CommentFormProps } from "../../types/Types";
 
@@ -17,7 +17,7 @@ const CommentForm = ({ open, close }: CommentFormProps) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="test">
       <FormControl fullWidth>
         <InputLabel htmlFor="comment">Add a comment</InputLabel>
         <Input
@@ -27,7 +27,7 @@ const CommentForm = ({ open, close }: CommentFormProps) => {
           onChange={(e) => setComment(e.target.value)}
         />
       </FormControl>
-      <Button type="submit" fullWidth variant="contained" color="primary" onClick={close}>
+      <Button type="submit" fullWidth variant="contained" color="primary" onClick={close} className="comment-button">
         Submit
       </Button>
     </form>
