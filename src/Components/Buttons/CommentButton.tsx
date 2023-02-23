@@ -1,16 +1,23 @@
-import React from "react";
-import { Button } from "@material-ui/core";
-import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
+import { useState } from "react";
+import { IconButton } from "@material-ui/core";
+import { ChatBubbleOutline } from "@material-ui/icons";
 
-interface CommentButtonProps {
+type Props = {
   onComment: () => void;
-}
+};
 
-const CommentButton = (props: CommentButtonProps) => {
+const CommentButton = ({ onComment }: Props) => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+    onComment();
+  };
+
   return (
-    <Button onClick={props.onComment}>
-      <ChatBubbleOutlineIcon fontSize="small" />
-    </Button>
+    <IconButton className="commentButton" onClick={handleClick}>
+      <ChatBubbleOutline />
+    </IconButton>
   );
 };
 

@@ -1,37 +1,58 @@
-import { useState } from "react";
-import "../../Styles/CommentButton.css";
-import { FormControl, Input, InputLabel, Button } from "@material-ui/core";
-import { CommentFormProps } from "../../types/Types";
+import { Avatar, Button } from "@material-ui/core";
+import "../../Styles/TweetBox.css";
+import { AvatarIcon } from "../AvatarIcon";
+import React, { useState } from "react";
+import { sendTweetProps } from "../../types/Types";
 
-const CommentForm = ({ open, close }: CommentFormProps) => {
-  const [comment, setComment] = useState("");
+type CommentFormProps = {
+  close: () => void;
+  open: boolean;
+}
 
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-    console.log("Comment submitted: ", comment);
-    setComment("");
+function CommentForm(props: CommentFormProps) {
+  const [tweetMessage, setTweetMessage] = useState("");
+  const [tweetImage, setTweetImage] = useState("");
+  const [isOpen, setIsOpen] = useState(props.open);
+
+  const sendTweet = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const newTweet: sendTweetProps = {
+      displayName: "suichanwa",
+      username: "name",
+      verified: false,
+      text: tweetMessage,
+      image: tweetImage,
+      avatar: AvatarIcon,
+    };
+
+    /*
+    userCollectionRef.add(newTweet);
+    setTweetMessage("");
+    setTweetImage("");
+    */
+
+    setIsOpen(false);
   };
 
-  if (!open) {
-    return null;
-  }
-
   return (
-    <form onSubmit={handleSubmit} className="test">
-      <FormControl fullWidth>
-        <InputLabel htmlFor="comment">Add a comment</InputLabel>
-        <Input
-          id="comment"
-          type="text"
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-        />
-      </FormControl>
-      <Button type="submit" fullWidth variant="contained" color="primary" onClick={close} className="comment-button">
-        Submit
-      </Button>
-    </form>
+    <div className={`tweetBox ${isOpen ? "open" : ""}`}>
+      <form onSubmit={sendTweet}>
+        <div className="tweetBox__input">
+          <Avatar src={AvatarIcon} />
+          <input
+            placeholder="What's happening?"
+            type="text"
+            className="inputts"
+            value={tweetMessage}
+            onChange={(e) => setTweetMessage(e.target.value)}
+          />
+        </div>
+        <Button type="submit" className="tweetBox__tweetButton">
+          Tweet
+        </Button>
+      </form>
+    </div>
   );
-};
+}
 
 export default CommentForm;
