@@ -8,18 +8,12 @@ import LikeButton from "./LikeButton";
 import RTButton from "./Buttons/RTButton";
 import CommentButton from "./Buttons/CommentButton";
 import CommentForm from "./Comment/CommentForm";
-import { ChatBubbleOutline } from "@material-ui/icons";
-
-type CommentFormProps = {
-  close: () => void;
-  open: boolean;
-};
+import PublishButton from "./Buttons/PunblishButton";
 
 const Post = forwardRef((props: IPost, ref: any) => {
   const { displayName, username, verified, text, image, avatar } = props;
   const [posts, setPosts] = useState<IPost[]>([]);
   const [open, setOpen] = useState(false);
-  const openForm = () => setOpen(true);
   const closeForm = () => setOpen(false);
 
   const addPost = (post: IPost) => {
@@ -61,7 +55,7 @@ const Post = forwardRef((props: IPost, ref: any) => {
             }}
           />
           <LikeButton />
-          <PublishIcon fontSize="small" />
+          <PublishButton />
         </div>
         <CommentForm close={closeForm} open={open} />
       </div>

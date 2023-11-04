@@ -1,1 +1,1 @@
-export const AvatarIcon = "https://www.linkpicture.com/q/telegaAva2.jpg";
+export const AvatarIcon = "https://i.ibb.co/Z8VWY31/2023-03-05-11-29.png";

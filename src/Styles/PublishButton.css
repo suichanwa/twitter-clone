@@ -1,0 +1,7 @@
+/*write an blue colored style for Publish button like twitter*/
+.published{
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
