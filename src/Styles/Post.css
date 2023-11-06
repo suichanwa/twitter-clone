@@ -1,30 +1,70 @@
 /* Post.css */
 
-.comment-button {
+.post {
+  display: flex;
+  border: 1px solid #e1e8ed;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0px 1px 3px rgba(15, 15, 15, 0.13);
+}
+
+.post__avatar {
+  margin-right: 15px;
+}
+
+.post__avatar > .MuiAvatar-root {
+  width: 50px;
+  height: 50px;
+}
+
+.post__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.post__headerText > h3 {
+  margin: 0;
+}
+
+.post__headerText > h3 > .post__headerSpecial {
+  color: #657786;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.post__badge {
+  color: #17bf63;
+}
+
+.post__headerDescription {
+  margin-bottom: 5px;
+}
+
+.post__headerDescription > p {
+  margin: 0;
+}
+
+.post__image {
+  max-width: 100%;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.post__footer {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 40px;
-  width: 80px;
-  padding: 0 10px;
-  border: none;
-  border-radius: 20px;
-  background-color: transparent;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  margin-top: 10px;
 }
 
-.comment-button:hover {
-  background-color: rgba(29, 161, 242, 0.1);
-}
-
-.comment-button__icon {
+.post__footer > .MuiSvgIcon-root {
+  font-size: 20px;
   margin-right: 5px;
-  font-size: 18px;
-  color: #1da1f2;
+  cursor: pointer;
 }
 
-.comment-button__text {
-  font-size: 14px;
-  color: #1da1f2;
+.post__footer > .MuiSvgIcon-root:hover {
+  color: var(--twitter-color);
 }

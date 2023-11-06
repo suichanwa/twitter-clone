@@ -1,6 +1,5 @@
 import SidebarOption from "./SidebarOption";
 import HomeIcon from "@material-ui/icons/Home";
-import SearchIcon from "@material-ui/icons/Search";
 import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
@@ -19,6 +18,7 @@ import {
 import Profile from "../Pages/Profile";
 import Home from "../Pages/Home";
 
+
 const Sidebar = () => {
   let component;
 
@@ -36,15 +36,13 @@ const Sidebar = () => {
       <TwitterIcon className="sidebar__twitterIcon" />
       <Router>
         {component}
-        <Link to="/home" replace={true}><SidebarOption text="Home" Icon={HomeIcon} active={false} /></Link>
-        <SidebarOption text="Search" Icon={SearchIcon} active={false}/>
-        <SidebarOption text="Notifications" Icon={NotificationsNoneIcon} active={false}/>
-        <SidebarOption text="Messages" Icon={MailOutlineIcon} active={false}/>
-        <SidebarOption text="Bookmarks" Icon={BookmarkBorderIcon} active={false}/>
-        <SidebarOption text="Lists" Icon={ListAltIcon} active={false}/>
-        <Link to="/profile" replace={true}><SidebarOption text="Profile" Icon={PermIdentityIcon} active={false}/></Link>
-         
-        <SidebarOption text="More" Icon={MoreHorizIcon} active={false}/>
+        <Link to="/home" replace={true}><SidebarOption text="Home" Icon={HomeIcon} active={false} className="font-link"/></Link>
+        <Link to="/notifications" replace={true}><SidebarOption text="Notifications" Icon={NotificationsNoneIcon} active={false} className="font-link"/></Link>
+        <Link to="/messages" replace={true}><SidebarOption text="Messages" Icon={MailOutlineIcon} active={false} className="font-link"/></Link>
+        <Link to="/bookmarks" replace={true}><SidebarOption text="Bookmarks" Icon={BookmarkBorderIcon} active={false} className="font-link"/></Link>
+        <Link to="/lists" replace={true}><SidebarOption text="Lists" Icon={ListAltIcon} active={false}className="font-link" /></Link>
+        <Link to="/profile" replace={true}><SidebarOption text="Profile" Icon={PermIdentityIcon} active={false} className="font-link"/></Link>
+        <SidebarOption text="More" Icon={MoreHorizIcon} active={false} className={"font-link"}/>
 
         <Routes>
           <Route path="/profile" element={<Profile/>}/>
