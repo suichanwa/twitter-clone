@@ -1,8 +1,8 @@
-import React from "react";
-import "../Styles/Feed.css";
 import TweetBox from './TweetBox'; 
-import 'firebase/firestore';
 import SearchBar from "./SearchBar";
+
+import "../Styles/Feed.css";
+import 'firebase/firestore';
 
 function Feed(){
     return(

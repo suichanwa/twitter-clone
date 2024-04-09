@@ -1,6 +1,7 @@
 import SearchIcon from "@material-ui/icons/Search";
 import { Button } from "@material-ui/core";
 import { useState } from "react";
+
 import "../Styles/SearchBar.css";
 
 const SearchBar = () => {
@@ -9,6 +10,14 @@ const SearchBar = () => {
     const handleClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
         setSearched(!searched);
     };
+
+    const trends = [
+        ["my girl is cute", "1.5 Tweets"],
+        ["she's like adorable af", "2.5 Tweets"],
+        ["we're spending time together a lot last time", "1.2M Tweets"],
+        ["i haven't felt so happy for in a while", "1.5 Tweets"],
+        ["everything feels so easey, thanks honey", "2.5 Tweets"],
+    ];
 
     return (
         <div className="searchbar">
@@ -28,6 +37,15 @@ const SearchBar = () => {
                         fontSize="small"
                     />
                 </Button>
+               <div className="trends">
+                    <h3>Trends for you</h3>
+                    {trends.map((trend) => (
+                        <div className="trend">
+                            <h4>{trend[0]}</h4>
+                            <p>{trend[1]}</p>
+                        </div>
+                    ))}
+                </div> 
             </div>
         </div>
     );
