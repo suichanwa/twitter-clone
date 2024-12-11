@@ -1,10 +1,12 @@
+// src/Components/Widgets.tsx
 import React from "react";
+import SearchBar from "./SearchBar";
 import "../Styles/Widgets.css";
 
 function Widgets() {
-    return(
+    return (
         <div className="widgets">
-            <h2>Widgets</h2> 
+            <SearchBar />
         </div>
     );
 }

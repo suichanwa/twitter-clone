@@ -1,28 +1,32 @@
+// src/App.tsx
+import React, { useContext } from 'react';
 import Sidebar from './Components/Sidebar';
-import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Feed from './Components/Feed';
-import Post from './Components/Post';
-import axios from 'axios';
-import { AvatarIcon } from './Components/AvatarIcon';
+import Profile from './Pages/Profile/Profile';
+import Widgets from './Components/Widgets';
+import ThemeSwitchButton from './Components/ThemeSwitchButton';
+import { ThemeContext } from './contexts/ThemeContext';
 import './App.css';
 
 function App() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    axios.get('http://localhost:3000/tweets').then((res) => {
-      setData(res.data);
-    });
-  }, []);
+  const { theme } = useContext(ThemeContext);
 
   return (
-    <div className="app">
-      <Sidebar />
-      <Post displayName={'suichanwa'} username={'suichanwa'} verified={false} text={'omfgg'} image={AvatarIcon} avatar={AvatarIcon}  />
-      <Feed />
+    <div className={`app ${theme}`}>
+      <Router>
+        <Sidebar />
+        <div className="app__content">
+          <Routes>
+            <Route path="/home" element={<Feed />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </div>
+        <Widgets />
+        <ThemeSwitchButton />
+      </Router>
     </div>
-  )
-
+  );
 }
 
 export default App;

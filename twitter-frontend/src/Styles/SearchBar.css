@@ -1,62 +1,100 @@
-.Search-Twitter{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    background-color: #fff;
-    border-bottom: 1px solid #e6ecf0;
-    position: fixed;
-    top: 0;
-    z-index: 100;
+.searchbar {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #f5f8fa;
+  border-radius: 20px;
+  margin-top: 20px;
 }
-
-.searchbar-input{
-    width: 200px;
-    height: 30px;
-    border-radius: 20px;
-    border: 1px solid #e6ecf0;
-    padding: 10px;
-    font-size: 15px;
-    outline: none;
-}
-
 
 .searchbar-container {
-    display: flex;
-    align-items: center; 
+  display: flex;
+  align-items: center;
+  background-color: #e6ecf0;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 20px;
 }
 
 .searchbar-input {
-    flex: 1; 
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
 }
 
-.trends{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    height: 80vh;
-    background-color: #fff;
-    position: fixed;
-    top: 70px;
-    z-index: 100;
-    border-right: 1px solid #e6ecf0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-    padding: 10px;
+.searchbar-button {
+  background-color: var(--twitter-color);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.trend{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    width: 100%;
-    border-bottom: 1px solid #e6ecf0;
-    font-size: 15px;
-    color: #14171a
+.searchbar-button:hover {
+  background-color: #1A91DA;
+}
+
+.trends {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.trends h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.trend {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  border-bottom: 1px solid #e6ecf0;
+}
+
+.trend:last-child {
+  border-bottom: none;
+}
+
+.trend-topic {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1DA1F2;
+}
+
+.trend-tweets {
+  font-size: 14px;
+  color: gray;
+}
+
+.app.dark .searchbar {
+  background-color: var(--dark-background-secondary);
+}
+
+.app.dark .searchbar-container {
+  background-color: var(--dark-background-secondary);
+}
+
+.app.dark .trends {
+  background-color: var(--dark-background-secondary);
+  border: 1px solid var(--dark-border);
+}
+
+.app.dark .trend {
+  border-bottom: 1px solid var(--dark-divider);
+}
+
+.app.dark .trend-topic {
+  color: var(--dark-text);
+}
+
+.app.dark .trend-tweets {
+  color: var(--dark-text-secondary);
 }

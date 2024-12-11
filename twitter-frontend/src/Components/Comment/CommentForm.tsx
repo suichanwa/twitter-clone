@@ -11,25 +11,21 @@ type CommentFormProps = {
 
 function CommentForm(props: CommentFormProps) {
   const [tweetMessage, setTweetMessage] = useState("");
-  const [tweetImage, setTweetImage] = useState("");
+  // Remove the unused setTweetImage state
+  // const [tweetImage, setTweetImage] = useState("");
   const [isOpen, setIsOpen] = useState(props.open);
 
   const sendTweet = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const newTweet: sendTweetProps = {
-      displayName: "suichanwa",
-      username: "name",
-      verified: false,
-      text: tweetMessage,
-      image: tweetImage,
-      avatar: AvatarIcon,
-    };
-
-    /*
-    userCollectionRef.add(newTweet);
-    setTweetMessage("");
-    setTweetImage("");
-    */
+    // Remove the unused newTweet variable
+    // const newTweet: sendTweetProps = {
+    //   displayName: "suichanwa",
+    //   username: "name",
+    //   verified: false,
+    //   text: tweetMessage,
+    //   image: tweetImage,
+    //   avatar: AvatarIcon,
+    // };
 
     setIsOpen(false);
   };

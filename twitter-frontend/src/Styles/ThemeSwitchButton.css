@@ -1,0 +1,9 @@
+.theme-switch-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--twitter-color) !important;
+  color: white !important;
+  border-radius: 50%;
+  padding: 10px;
+}

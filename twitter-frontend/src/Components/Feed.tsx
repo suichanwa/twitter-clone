@@ -1,18 +1,19 @@
-import TweetBox from './TweetBox'; 
-import SearchBar from "./SearchBar";
+// src/Components/Feed.tsx
+import React from 'react';
+import TweetBox from './TweetBox';
+import PostFormCard from './PostFormCard';
+import '../Styles/Feed.css';
 
-import "../Styles/Feed.css";
-import 'firebase/firestore';
-
-function Feed(){
-    return(
-        <div className="">
-            <div className="">
-            </div>
-            <SearchBar />
-            <TweetBox />
-        </div>
-    );
+function Feed() {
+  return (
+    <div className="feed">
+      <div className="feed__header">
+        <h2>Home</h2>
+      </div>
+      <PostFormCard />
+      <TweetBox />
+    </div>
+  );
 }
 
 export default Feed;

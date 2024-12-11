@@ -29,3 +29,12 @@
   font-size: 20px;
   font-weight: 800;
 }
+
+.app.dark .feed {
+  border-right: 1px solid var(--dark-border);
+}
+
+.app.dark .feed__header {
+  background-color: var(--dark-background-secondary);
+  border: 1px solid var(--dark-border);
+}

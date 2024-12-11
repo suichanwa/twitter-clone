@@ -1,6 +1,16 @@
 body {
-  --twitter-color: #50b7f5;
+  --twitter-color: #1DA1F2;
   --twitter-background: #e6ecf0;
+  --dark-background: #15202B;
+  --dark-background-secondary: #192734;
+  --dark-text: #FFFFFF;
+  --dark-text-secondary: #8899A6;
+  --dark-divider: #2F3943;
+  --dark-border: #38444D;
+  --dark-hover-background: #22303C;
+  --dark-active-background: #1C2833;
+  --dark-shadow: rgba(0, 0, 0, 0.5);
+  --dark-highlight: rgba(29, 161, 242, 0.1);
 }
 
 .app {
@@ -10,4 +20,94 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding: 0 10px;
+}
+
+.app__content {
+  flex: 0.4;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sidebar {
+  flex: 0.3;
+  border-right: 1px solid var(--twitter-background);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.widgets {
+  flex: 0.3;
+  padding: 20px;
+  margin-top: 20px;
+  height: 100vh;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+}
+
+.theme-switch-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--twitter-color) !important;
+  color: white !important;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.app.dark {
+  background-color: var(--dark-background);
+  color: var(--dark-text);
+}
+
+.app.dark .sidebar,
+.app.dark .widgets,
+.app.dark .feed {
+  background-color: var(--dark-background-secondary);
+  border-color: var(--dark-border);
+}
+
+.app.dark .sidebar__link,
+.app.dark .sidebar__tweet,
+.app.dark .feed__header,
+.app.dark .postFormCard,
+.app.dark .tweetBox,
+.app.dark .trend,
+.app.dark .searchbar-container {
+  background-color: var(--dark-background-secondary);
+  color: var(--dark-text);
+}
+
+.app.dark .sidebar__link:hover,
+.app.dark .sidebar__tweet:hover,
+.app.dark .feed__header:hover,
+.app.dark .postFormCard:hover,
+.app.dark .tweetBox:hover,
+.app.dark .trend:hover,
+.app.dark .searchbar-container:hover {
+  background-color: var(--dark-hover-background);
+}
+
+.app.dark .sidebar__link:active,
+.app.dark .sidebar__tweet:active,
+.app.dark .feed__header:active,
+.app.dark .postFormCard:active,
+.app.dark .tweetBox:active,
+.app.dark .trend:active,
+.app.dark .searchbar-container:active {
+  background-color: var(--dark-active-background);
+}
+
+.app.dark .divider {
+  border-color: var(--dark-divider);
+}
+
+.app.dark .shadow {
+  box-shadow: var(--dark-shadow);
+}
+
+.app.dark .highlight {
+  background-color: var(--dark-highlight);
 }

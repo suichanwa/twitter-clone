@@ -1,8 +1,8 @@
-import { MouseEventHandler } from "react";
+import React, { MouseEventHandler } from "react";
 
-export interface SlideBarProps{
+export interface SlideBarProps {
     clicked: MouseEventHandler<HTMLDivElement> | undefined;
-    icon?: JSX.Element;
+    icon?: Element;
     title?: string;
     active?: boolean;
 }
@@ -16,7 +16,7 @@ export interface IPost {
     avatar: string;
 }
 
-export interface sendTweetProps{
+export interface sendTweetProps {
     displayName: string;
     username: string;
     verified: boolean;
@@ -26,11 +26,11 @@ export interface sendTweetProps{
 }
 
 export interface RTButtonProps {
-  onRetweet: () => void;
-  post: IPost;
+    onRetweet: () => void;
+    post: IPost;
 }
 
 export interface CommentFormProps {
-  open: boolean;
-  close: () => void;
+    open: boolean;
+    close: () => void;
 }

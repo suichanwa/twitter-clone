@@ -1,0 +1,43 @@
+/* src/Styles/Profile.css */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-tweets {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* src/Styles/ProfileHeader.css */
+.profile-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border-bottom: 1px solid var(--twitter-background);
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-info h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.profile-info p {
+    margin: 0;
+    color: gray;
+}

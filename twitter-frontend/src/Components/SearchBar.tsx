@@ -1,7 +1,6 @@
 import SearchIcon from "@material-ui/icons/Search";
 import { Button } from "@material-ui/core";
 import { useState } from "react";
-
 import "../Styles/SearchBar.css";
 
 const SearchBar = () => {
@@ -12,11 +11,11 @@ const SearchBar = () => {
     };
 
     const trends = [
-        ["my girl is cute", "1.5 Tweets"],
-        ["she's like adorable af", "2.5 Tweets"],
-        ["we're spending time together a lot last time", "1.2M Tweets"],
-        ["i haven't felt so happy for in a while", "1.5 Tweets"],
-        ["everything feels so easey, thanks honey", "2.5 Tweets"],
+        { topic: "my girl is cute", tweets: "1.5K Tweets" },
+        { topic: "she's like adorable af", tweets: "2.5K Tweets" },
+        { topic: "we're spending time together a lot last time", tweets: "1.2M Tweets" },
+        { topic: "i haven't felt so happy for in a while", tweets: "1.5K Tweets" },
+        { topic: "everything feels so easey, thanks honey", tweets: "2.5K Tweets" },
     ];
 
     return (
@@ -25,7 +24,7 @@ const SearchBar = () => {
                 <form>
                     <input
                         type="text"
-                        placeholder="Search-Twitter"
+                        placeholder="Search Twitter"
                         className="searchbar-input"
                     />
                 </form>
@@ -37,19 +36,18 @@ const SearchBar = () => {
                         fontSize="small"
                     />
                 </Button>
-               <div className="trends">
-                    <h3>Trends for you</h3>
-                    {trends.map((trend) => (
-                        <div className="trend">
-                            <h4>{trend[0]}</h4>
-                            <p>{trend[1]}</p>
-                        </div>
-                    ))}
-                </div> 
+            </div>
+            <div className="trends">
+                <h3>Trends for you</h3>
+                {trends.map((trend, index) => (
+                    <div key={index} className="trend">
+                        <div className="trend-topic">{trend.topic}</div>
+                        <div className="trend-tweets">{trend.tweets}</div>
+                    </div>
+                ))}
             </div>
         </div>
     );
 };
 
 export default SearchBar;
-

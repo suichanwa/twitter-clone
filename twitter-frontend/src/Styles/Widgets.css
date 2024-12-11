@@ -1,4 +1,11 @@
 .widgets {
+  flex: 0.3;
+  padding: 20px;
+  margin-top: 20px;
+  height: 100vh;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
 }
 
 .widgets__input {
@@ -31,4 +38,17 @@
 .widgets__widgetContainer > h2 {
   font-size: 18px;
   font-weight: 800;
+}
+
+.app.dark .widgets {
+  border-right: 1px solid var(--dark-border);
+}
+
+.app.dark .widgets__input {
+  background-color: var(--dark-background-secondary);
+}
+
+.app.dark .widgets__widgetContainer {
+  background-color: var(--dark-background-secondary);
+  border: 1px solid var(--dark-border);
 }
