@@ -1,4 +1,3 @@
-// src/Components/PostFormCard.tsx
 import React, { useState } from 'react';
 import { Avatar, Button } from '@material-ui/core';
 import { AvatarIcon } from './AvatarIcon';
@@ -9,7 +8,6 @@ const PostFormCard = () => {
 
   const handlePost = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Add logic to handle post submission
     setPostMessage('');
   };
 

@@ -5,7 +5,6 @@ import { Button } from '@material-ui/core';
 
 const LikeButton = () => {
     const [liked, setLiked] = useState(false);
-    //add a coounter to count the number of likes
     const [counter, setCounter] = useState(0);
 
 

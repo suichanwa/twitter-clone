@@ -11,11 +11,14 @@ const SearchBar = () => {
     };
 
     const trends = [
-        { topic: "my girl is cute", tweets: "1.5K Tweets" },
-        { topic: "she's like adorable af", tweets: "2.5K Tweets" },
-        { topic: "we're spending time together a lot last time", tweets: "1.2M Tweets" },
-        { topic: "i haven't felt so happy for in a while", tweets: "1.5K Tweets" },
-        { topic: "everything feels so easey, thanks honey", tweets: "2.5K Tweets" },
+        { topic: "it's been a lot of time since last time i've been here", tweets: "1.5K Tweets" },
+        { topic: "and", tweets: "2.5K Tweets" },
+        { topic: "life feels so tiring lately, and i guess not just lately but overall", tweets: "1.2M Tweets" },
+        { topic: "yk im trying to make it throw, it's getting so hard", tweets: "1.5K Tweets" },
+        { topic: "but i do my best, each day and every day, i try to be better", tweets: "2.5K Tweets" },
+        { topic: "and, it acutally seems to be getting better", tweets: "1.2M Tweets" },
+        { topic: "i might not feel the happiest at this point or moment", tweets: "1.5K Tweets" },
+        { topic: "but, i guess, im <3", tweets: "2.5K Tweets" },
     ];
 
     return (

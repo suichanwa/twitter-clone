@@ -1,14 +1,16 @@
-import React from 'react';
 import ProfileHeader from '../Profile/ProfileHeader';
 import Post from '../../Components/Post';
 import { tweetsDatas } from '../../types/Tweets';
+
+import { AvatarIcon } from '../../Components/AvatarIcon';
+
 import '../../Styles/Profile.css';
 
 const Profile = () => {
     const user = {
         displayName: 'suichanwa',
         username: 'name',
-        avatar: 'https://i.ibb.co/Z8VWY31/2023-03-05-11-29.png',
+        avatar: AvatarIcon,
     };
 
     return (
