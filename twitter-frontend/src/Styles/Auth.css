@@ -1,0 +1,85 @@
+/* src/Styles/Auth.css */
+
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f8fa;
+}
+
+.auth__container {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  border-radius: 15px;
+}
+
+.auth__logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.auth__twitterIcon {
+  color: #1da1f2;
+  font-size: 2.5rem !important;
+}
+
+.auth__title {
+  text-align: center;
+  margin-bottom: 20px !important;
+  font-weight: bold !important;
+}
+
+.auth__tabs {
+  margin-bottom: 20px;
+}
+
+.auth__form {
+  margin-top: 10px;
+}
+
+.auth__button {
+  margin-top: 20px !important;
+  background-color: #1da1f2 !important;
+  color: white !important;
+  font-weight: bold !important;
+  text-transform: none !important;
+  padding: 10px !important;
+  border-radius: 30px !important;
+}
+
+.auth__button:hover {
+  background-color: #1a91da !important;
+}
+
+/* Dark mode support */
+.dark .auth {
+  background-color: #15202b;
+}
+
+.dark .auth__container {
+  background-color: #192734;
+  color: white;
+}
+
+.dark .MuiInputBase-input {
+  color: white !important;
+}
+
+.dark .MuiInputLabel-root {
+  color: #8899a6 !important;
+}
+
+.dark .MuiOutlinedInput-notchedOutline {
+  border-color: #38444d !important;
+}
+
+.dark .MuiTab-textColorPrimary {
+  color: #8899a6 !important;
+}
+
+.dark .MuiTab-textColorPrimary.Mui-selected {
+  color: #1da1f2 !important;
+}
