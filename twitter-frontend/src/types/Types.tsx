@@ -5,6 +5,7 @@ export interface SlideBarProps {
     icon?: Element;
     title?: string;
     active?: boolean;
+    
 }
 
 export interface IPost {
